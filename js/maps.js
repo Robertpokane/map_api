@@ -1,3 +1,6 @@
+$(document).ready(function(){
+    
+
 function initMap() {
     var map = new google.maps.Map(document.getElementById("map"), {
         zoom: 1,
@@ -13,8 +16,8 @@ function initMap() {
         { lat: 40.785091, lng: -73.968285 },
         { lat: 41.084045, lng: -73.874245 },
         { lat: 40.754932, lng: -73.984016 },
-        uluru,
-        edinburgh
+        { lat: -25.363, lng: 131.044 },
+        { lat: 55.9533, lng: -3.1883 }
     ];
     var uluru = { lat: -25.363, lng: 131.044 };
     var edinburgh = { lat: 55.9533, lng: -3.1883 };
@@ -61,6 +64,11 @@ function initMap() {
     });
 }
 
+//show/hide video toggle.
 function showVid() {
     $("#hideMe").toggleClass("hidden")
+    //add el.url = url code. after url var has been sat up
 };
+    
+    
+})//doc.ready end
