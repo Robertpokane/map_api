@@ -15,3 +15,6 @@
         }
 
         /* google style options from Marker cluster API documention*/
+        .hidden{
+            display: none;
+        }
