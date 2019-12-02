@@ -19,4 +19,14 @@
             display: none;
         }
 
+        #hideMe {
+            height:100%;
+                      
+        }
+        div>iframe {
+            height: 432px;
+            width: 768px;
+            margin-left: 25%;
+        }
+
     

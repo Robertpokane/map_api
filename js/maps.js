@@ -11,7 +11,8 @@ var map;
                             lng: -116.5453
                         }],
                         title: "A beginner's guide to quantum computing",
-                        content:"A quantum computer isn't just a more powerful version of the computers we use today; it's something else entirely, based on emerging scientific understanding -- and more than a bit of uncertainty. Enter the quantum wonderland with TED Fellow Shohini Ghose and learn how this technology holds the potential to transform medicine, create unbreakable encryption and even teleport information."
+                        content:"A quantum computer isn't just a more powerful version of the computers we use today; it's something else entirely, based on emerging scientific understanding -- and more than a bit of uncertainty. Enter the quantum wonderland with TED Fellow Shohini Ghose and learn how this technology holds the potential to transform medicine, create unbreakable encryption and even teleport information.",
+                        url:"https://www.youtube.com/embed/QuR969uMICM"
                     },
                     {
                         placeName: "Canada (Vancouver)",
@@ -20,7 +21,8 @@ var map;
                             lng: -123.1207 
                         }],
                         title: "Everything around you can become a computer",
-                        content:"Designer Ivan Poupyrev wants to integrate technology into everyday objects to make them more useful and fun -- like a jacket you can use to answer phone calls or a houseplant you can play like a keyboard. In a talk and tech demo, he lays out his vision for a physical world that's more deeply connected to the internet and shows how, with a little collaboration, we can get there. Unveiled in this talk: Poupyrev announces that his newest device, Jacquard, is now publicly available for all designers to use."
+                        content:"Designer Ivan Poupyrev wants to integrate technology into everyday objects to make them more useful and fun -- like a jacket you can use to answer phone calls or a houseplant you can play like a keyboard. In a talk and tech demo, he lays out his vision for a physical world that's more deeply connected to the internet and shows how, with a little collaboration, we can get there. Unveiled in this talk: Poupyrev announces that his newest device, Jacquard, is now publicly available for all designers to use.",
+                        url:"https://www.youtube.com/embed/vjXJ4f-OW0U"
                     },
                     {
                         placeName: "Estonia (Tartu)",
@@ -29,7 +31,8 @@ var map;
                             lng: 26.7290
                         }],
                         title: "Cyber security",
-                        content:"We live in the 21 st Century. Our entire lives are connected. How to protect youself and your company from cyber crime?  This talk was given at a TEDx event using the TED conference format but independently organized by a local community"
+                        content:"We live in the 21 st Century. Our entire lives are connected. How to protect youself and your company from cyber crime?  This talk was given at a TEDx event using the TED conference format but independently organized by a local community",
+                        url:"https://www.youtube.com/embed/_C7sNvIGQzM"
                     },
                     {
                         placeName: "USA (St. Lawrence University)",
@@ -38,7 +41,8 @@ var map;
                             lng: -75.1609
                         }],
                         title: "Artificial Intelligence and the Future of Work",
-                        content:"Andy Chan is a Product Manager at Infinia ML, an artificial intelligence company that builds custom algorithms and software for Fortune 500 companies. He currently leads the design, development, and execution of the company’s AI strategies. Prior to Infinia ML, Andy was a Senior Product Manager at Avalara and helped the company go public in June 2018."
+                        content:"Andy Chan is a Product Manager at Infinia ML, an artificial intelligence company that builds custom algorithms and software for Fortune 500 companies. He currently leads the design, development, and execution of the company’s AI strategies. Prior to Infinia ML, Andy was a Senior Product Manager at Avalara and helped the company go public in June 2018.",
+                        url:"https://www.youtube.com/embed/bScAMuegX7Y"
                     },
                     {
                         placeName: "Scotland (Edinburgh)",
@@ -47,7 +51,8 @@ var map;
                             lng: -3.1883
                         }],
                         title: "The New Software Revolution: programming biological cells",
-                        content:"The cells in your body are like computer software: they're 'programmed' to carry out specific functions at specific times. If we can better understand this process, we could unlock the ability to reprogram cells ourselves, says computational biologist Sara-Jane Dunn. In a talk from the cutting-edge of science, she explains how her team is studying embryonic stem cells to gain a new understanding of the biological programs that power life -- and develop 'living software' that could transform medicine, agriculture and energy"
+                        content:"The cells in your body are like computer software: they're 'programmed' to carry out specific functions at specific times. If we can better understand this process, we could unlock the ability to reprogram cells ourselves, says computational biologist Sara-Jane Dunn. In a talk from the cutting-edge of science, she explains how her team is studying embryonic stem cells to gain a new understanding of the biological programs that power life -- and develop 'living software' that could transform medicine, agriculture and energy",
+                        url:"https://www.youtube.com/embed/kdAs3UVgIGg"
                     },
                      {
                         placeName: "Canada (Kingston)",
@@ -56,9 +61,12 @@ var map;
                             lng: -76.4951
                         }],
                         title: "How immersive technologies (AR/VR) will reform the human experience",
-                        content:"Virtual and augmented reality are among today’s greatest immersive technology trends… but can they be used for more than just gaming and entertainment? In this talk, Tiffany Lam explores the use of immersive technologies like virtual and augmented reality to help tell stories better, bring people closer together, improve learning, and empower education through direct experience. For the last 15 years, Tiffany has been documenting and storytelling her life experiences through digital media. As an introvert, she found 360VR capture revolutionary – a communication tool to better translate stories and experiences to her friends and family without exhausting herself with excessive words."
+                        content:"Virtual and augmented reality are among today’s greatest immersive technology trends… but can they be used for more than just gaming and entertainment? In this talk, Tiffany Lam explores the use of immersive technologies like virtual and augmented reality to help tell stories better, bring people closer together, improve learning, and empower education through direct experience. For the last 15 years, Tiffany has been documenting and storytelling her life experiences through digital media. As an introvert, she found 360VR capture revolutionary – a communication tool to better translate stories and experiences to her friends and family without exhausting herself with excessive words.",
+                        url:"https://www.youtube.com/embed/Fi97-DAcGMk"
                     }
                 ];
+
+                
         
                 window.onload = function () {
                     initMap();
@@ -70,14 +78,15 @@ var map;
                     for (var i = 0; i < markersOnMap.length; i++) {
 
                         var contentString = '<div id="content"><h1>' + markersOnMap[i].placeName + 
-                            '</h1></div>'+ markersOnMap[i].content;
+                            '</h1></div>'+ markersOnMap[i].content+
+        '<br><button onClick = "showVid()" id = "contentButton">Click Me</button> ';
         
                         const marker = new google.maps.Marker({
                             position: markersOnMap[i].LatLng[0],
                             map: map,
-                            title: markersOnMap[i].title
-                        
-                        });
+                            title: markersOnMap[i].title,
+                            src: document.getElementById('ifrm').src = markersOnMap[i].url
+                             });
         
                         const infowindow = new google.maps.InfoWindow({
                     content: contentString,
@@ -90,9 +99,18 @@ var map;
                             InforObj[0] = infowindow;
                         });
                         
+                    }   
+
+                   /*function setIframeSrc() {
+                       for (var i = 0; i < markersOnMap.length; i++) {
+
+                         document.getElementById('ifrm').src = markersOnMap[i].url;
                     }
-                    
+                                                
                 }
+                setIframeSrc()*/
+            }
+            
                 
         
                 function closeOtherInfo() {
@@ -112,7 +130,18 @@ var map;
                         center: centerCords
                     });
                     addMarker();
-                    // Add a marker clusterer to manage the markers.
-    var markerCluster = new MarkerClusterer(map, markers, { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
+                    
+    
 
                 }
+
+                
+
+                //show/hide video toggle.
+function showVid() {
+    $("#hideMe").toggleClass("hidden");
+   
+
+
+    //add el.url = url code. after url var has been sat up
+};
