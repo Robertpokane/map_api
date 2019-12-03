@@ -1,3 +1,4 @@
+$(document).ready(function(){
 var map;
            var InforObj = [];
                 var centerCords = {
@@ -64,7 +65,7 @@ var map;
                         content:"Virtual and augmented reality are among today’s greatest immersive technology trends… but can they be used for more than just gaming and entertainment? In this talk, Tiffany Lam explores the use of immersive technologies like virtual and augmented reality to help tell stories better, bring people closer together, improve learning, and empower education through direct experience. For the last 15 years, Tiffany has been documenting and storytelling her life experiences through digital media. As an introvert, she found 360VR capture revolutionary – a communication tool to better translate stories and experiences to her friends and family without exhausting herself with excessive words.",
                         url:"https://www.youtube.com/embed/Fi97-DAcGMk"
                     }
-                ];
+                ]; // markesOnMap End
 
                 
         
@@ -77,15 +78,14 @@ var map;
                 function addMarker() {
                     for (var i = 0; i < markersOnMap.length; i++) {
 
-                        var contentString = '<div id="content"><h1>' + markersOnMap[i].placeName + 
-                            '</h1></div>'+ markersOnMap[i].content+
-        '<br><button onClick = "showVid()" id = "contentButton">Click Me</button> ';
+                        var contentString = '<div id="content"><h3>' + markersOnMap[i].placeName + 
+                            '</h3></div>'+ markersOnMap[i].content;
         
                         const marker = new google.maps.Marker({
                             position: markersOnMap[i].LatLng[0],
                             map: map,
                             title: markersOnMap[i].title,
-                            src: document.getElementById('ifrm').src = markersOnMap[i].url
+                            
                              });
         
                         const infowindow = new google.maps.InfoWindow({
@@ -101,15 +101,7 @@ var map;
                         
                     }   
 
-                   /*function setIframeSrc() {
-                       for (var i = 0; i < markersOnMap.length; i++) {
-
-                         document.getElementById('ifrm').src = markersOnMap[i].url;
-                    }
-                                                
-                }
-                setIframeSrc()*/
-            }
+                   } // add marker end
             
                 
         
@@ -129,19 +121,14 @@ var map;
                         zoom: 3,
                         center: centerCords
                     });
-                    addMarker();
-                    
+                    addMarker();                 
     
 
-                }
+                } // initmap end
+
+        
 
                 
 
-                //show/hide video toggle.
-function showVid() {
-    $("#hideMe").toggleClass("hidden");
-   
 
-
-    //add el.url = url code. after url var has been sat up
-};
+}); // document.ready end
