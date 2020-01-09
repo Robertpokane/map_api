@@ -2,33 +2,53 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <title>Googlemaps API</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Gender In Academia</title>
+
+	<link rel="stylesheet" href="static/css/bootstrap.min.css" type="text/css" />
+	<link rel="stylesheet" href="static/css/dc.min.css" type="text/css" />
+	<link rel="stylesheet" href="static/css/style.css" type="text/css" />
+
+	<script type="text/javascript" src="static/js/d3.min.js"></script>
+	<script type="text/javascript" src="static/js/crossfilter.min.js"></script>
+	<script type="text/javascript" src="static/js/dc.min.js"></script>
+	<script type="text/javascript" src="static/js/queue.min.js"></script>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.25.0/ramda.min.js"></script>
+	<script src="https://unpkg.com/d3/dist/d3.min.js"></script>
+	<script src="https://unpkg.com/d3fc/build/d3fc.min.js"></script>
+	<script type="text/javascript" src="static/js/maps.js"></script>
+
 </head>
 
 <body>
-<h1>TED talks on the future of computer science 2019</h1>
+	<h1>TED talks </h1>
 
-<br><h2>Check out more TED Talks: <a target ="_balnk" href="http://www.ted.com">http://www.ted.com</a> 
+	<br>
+	<h2>Check out more TED Talks: <a target="_balnk" href="http://www.ted.com">http://www.ted.com</a>
 
-The TED Talks channel features the best talks and performances from the TED Conference, where the world's leading thinkers and doers give the talk of their lives in 18 minutes (or less). Look for talks on Technology, Entertainment and Design -- plus science, business, global issues, the arts and more.
-</h2>
-   
-    <br><div id="map">Map error</div>
- 
+		The TED Talks channel features the best talks and performances from the TED Conference, where the world's
+		leading thinkers and doers give the talk of their lives in 18 minutes (or less). Look for talks on Technology,
+		Entertainment and Design -- plus science, business, global issues, the arts and more.
+	</h2>
+
+	<br>
+	<div id="map">Map error</div>
 
 
+	<div id="comments"></div>
 
-    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxUptlIVh9uk7vK2sMNYTY3wma09z5ezM&callback=initMap"></script>
-    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="js/maps.js"></script>
-    
-  
+	<div id="eventName"></div>
+	<div class='dc-data-count'>
+		<span class='filter-count'></span>
+		selected out of <span class='total-count'></span> records.
+	</div>
+
+	<div id="chart" style="width: 100%; height: 250px"></div>
+
+
+	
 
 </body>
 
